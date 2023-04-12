@@ -1,3 +1,59 @@
+`git init`: initializes a new Git repository in your current directory.
+
+`git clone <repository>`: creates a local copy of a remote repository.
+
+`git add <file>`: stages a file to be committed in the next commit.
+
+`git commit -m "<message>"`: commits staged changes with a message describing the changes made.
+
+`git status`: displays the current status of the Git repository, including any changes that have been made and whether they have been staged or committed.
+
+`git log`: displays a history of all commits made in the repository.
+
+`git log -S “text 2”`: show where all text2 commits have been changed.
+
+`git branch`: displays a list of all branches in the repository.
+
+`git branch <branch-name>`: creates a new branch with the given name.
+
+`git checkout <branch-name>`: switches to the branch with the given name.
+
+`git merge <branch-name>`: merges the branch with the given name into the current branch.
+
+`git push`: pushes the committed changes to a remote repository.
+
+`git pull`: pulls changes from a remote repository and merges them into the current branch.
+
+`git fetch`: fetches changes from a remote repository without merging them into the current branch.
+
+`git remote`: lists all remote repositories associated with the current repository.
+
+`git remote add <name> <url>`: adds a new remote repository with the given name and URL.
+
+`git revert`: creates a new commit that undoes the changes made in a previous commit.
+
+`git revert #hashid`: revert particular changes from the current project.
+
+`git config –global alias.gaac “!git add -A && git commit -m”`: creates an alias for the `git add` and `git commit` commands to make it easier to stage and commit changes.
+
+`git stash`: saves your changes and removes them from your working directory, leaving your directory in the state it was in when you last committed changes.
+
+`git stash save "<message>"`: provides an optional message when stashing changes. This will make it easier to identify the stashed changes later on.
+
+`git stash pop`: applies the most recent stash to your working directory and removes it from the stash list. If you have multiple stashes, you can specify which one to apply by providing its index, like `git stash pop stash@{2}`.
+
+`git branch -vv`: lists all the branches in a repository along with their respective upstream branches and the commit status between them.
+
+`git remote update --prune`: updates your local repository with the latest changes from the remote repository and cleans up any references to remote branches that no longer exist.
+
+`git reflog`: provides a log of all the actions taken on the repository, including commit hashes and the date and time of the action.
+
+`git checkout <commitId> <filename>`: retrieves a specific version of a file from a previous commit. Replace the current version of the file with the version from the specific commit.
+
+`git reset <filename>`: unstages changes to a file that have been added to the staging area.
+
+`git reset HEAD`: unstages all changes that have been added to the staging area.
+
 # Git reset --soft and Git reset --hard
 
 Let's say you have the following commit history:
@@ -74,9 +130,6 @@ In this example, we have a `feature` branch and a `master` branch. We want to me
 
 ```bash
 git checkout master
-```
-
-```bash
 git merge feature
 ```
 
@@ -111,7 +164,7 @@ In summary, `git merge` combines changes from different branches and creates a n
 
 Here's an example of a `git cherry-pick`:
 
-<img src="git-cherry-pick.webp" alt="Git bisect visual representation" width="400" height="350">
+<img src="assets/git-cherry-pick.webp" alt="Git bisect visual representation" width="400" height="350">
 
 In this example, we have a `feature` branch and a `master` branch. We want to apply a specific commit (`Commit C`) from the `feature` branch to the `master` branch. We run the following commands:
 
